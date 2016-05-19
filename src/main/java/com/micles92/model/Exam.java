@@ -15,6 +15,10 @@ public class Exam extends BaseEntity {
     private String name;
 
 
+    public Exam() {
+    }
 
-
+    public Exam(String name) {
+        this.name = name;
+    }
 }
