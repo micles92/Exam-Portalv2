@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by lesiulol on 18.05.16.
  */
 @Controller
+@RequestMapping("/exam-list")
 public class ExamController {
 
 }
