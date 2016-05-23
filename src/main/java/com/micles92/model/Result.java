@@ -9,7 +9,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "RESULT")
-public class Result {
+public class Result extends BaseEntity {
 
     public enum Status{
         TAKE, PASSED, FAILED;

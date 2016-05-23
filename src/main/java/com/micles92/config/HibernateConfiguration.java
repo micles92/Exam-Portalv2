@@ -22,7 +22,7 @@ import java.util.Properties;
  */
 @Configuration
 @PropertySource(value = {"classpath:hibernate.properties"})
-@EnableJpaRepositories(basePackages = "com.micles.dao")
+@EnableJpaRepositories(basePackages = "com.micles92.dao")
 public class HibernateConfiguration {
 
 
@@ -64,7 +64,7 @@ public class HibernateConfiguration {
         properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql") );
         properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
         properties.put("hibernate.generate_statistics", environment.getRequiredProperty("hibernate.generate_statistics"));
-        properties.put("hibernate.hbm2ddl.import_files", environment.getRequiredProperty("hibernate.hbm2ddl.import_files"));
+//        properties.put("hibernate.hbm2ddl.import_files", environment.getRequiredProperty("hibernate.hbm2ddl.import_files"));
         return properties;
 
     }

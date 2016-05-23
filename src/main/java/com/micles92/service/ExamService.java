@@ -8,5 +8,5 @@ import java.util.List;
  * Created by lesiulol on 18.05.16.
  */
 public interface ExamService {
-    List<Exam> findAll();
+
 }

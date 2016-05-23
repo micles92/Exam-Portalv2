@@ -7,5 +7,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Created by lesiulol on 21.05.16.
  */
 public interface UserDao extends JpaRepository<User, Long> {
-    User findByLogin(String login);
 }
