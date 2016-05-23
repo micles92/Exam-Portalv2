@@ -1,4 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:url value="/exam/take" var="takeExamURL"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,17 +54,12 @@
             </tr>
             </thead>
             <tbody>
-            <td><a href="http://www.w3schools.com">Exam 1</a></td>
-            <td><p2>Passed</p2></a></td>
+            <c:forEach items="${exams}" var="exam">
             <tr>
-                <td><a href="http://www.w3schools.com">Exam 2</a></td>
-                <td><p2>Failed</p2></a></td>
+            <td><a href="${takeExamURL}/${exam.id}">${exam.name}</a></td>
+            <td><p2>Passed</p2></td>
             </tr>
-
-            <tr>
-                <td><a href="http://www.w3schools.com">Exam 3</a></td>
-                <td><p2>Take</p2></a></td>
-            </tr>
+            </c:forEach>
             </tbody>
 
         </table>

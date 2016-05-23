@@ -27,7 +27,7 @@
 
             <table class="table table-bordered table-striped table-hover">
                 <thead>
-                <th><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean metus justo, pulvinar ut accumsan ac, condimentum sit amet ante. Morbi sed maximus nunc, in ullamcorper lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas at arcu ante. Etiam quis faucibus libero. Aenean tincidunt augue sit amet blandit aliquet. Suspendisse potenti. Nam a velit quis orci porta blandit. Mauris varius metus at ipsum tempus interdum. Sed pretium, neque sed semper porta, ante dolor bibendum odio, sed aliquam enim purus at neque. Etiam luctus massa ac eros rhoncus, id porta eros fringilla. Quisque nec accumsan nisi, vel tristique purus. Maecenas fringilla tempor quam ut ultricies. Curabitur porta suscipit dolor vitae imperdiet. Aliquam sit amet turpis in mauris posuere consectetur eu eget ex. Nam egestas ligula a pharetra imperdiet. </p></th>
+                <th><p>${question.text}</p></th>
                 </thead>
                 <tbody>
                 <td>

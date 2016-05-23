@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MainController {
     @RequestMapping(value = "/", method = RequestMethod.GET) //obsluga zadania typu GET na adres /
     public String home(){
-        return "exam-list";  //nazwa widoku index
+        return "redirect:/exam/list";  //nazwa widoku index
     }
 }
