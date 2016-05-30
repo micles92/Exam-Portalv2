@@ -3,14 +3,17 @@ package com.micles92.service.impl;
 import com.micles92.dao.UserDao;
 import com.micles92.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
-
-import java.util.List;
 
 /**
  * Created by lesiulol on 21.05.16.
  */
 public class UserServiceImpl implements UserService {
+    @Autowired
+    UserDao userDao;
+
+    public com.micles92.model.User findByEmail(String email) {
+        return userDao.findByEmail(email);
+    }
 
 //    @Autowired
 //    UserDao userDao;
