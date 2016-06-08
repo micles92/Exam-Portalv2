@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <c:url value="/exam/take" var="takeExamURL"/>
+<c:url value="/logout" var="logoutURL"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +38,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li role="presentation"><a href="#">My Account</a></li>
-                    <li role="presentation"><a href="#">Logout</a></li>
+                    <li role="presentation"><a href="<c:url value="/logout"/> ">Logout</a></li>
                 </ul>
             </li>
         </ul>

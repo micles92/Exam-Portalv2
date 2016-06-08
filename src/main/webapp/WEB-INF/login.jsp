@@ -9,7 +9,7 @@
 
 <c:if test="${not empty registerSuccess}">
 <div class="alert alert-success">
-    <strong>Success!</strong> Indicates a successful or positive action.
+    <strong>Success!</strong> You may now login.
 </div>
 </c:if>
 

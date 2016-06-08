@@ -1,4 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:url value="/user-answer/save" var="userAnswerSaveURL"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +17,8 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
 <div id="container">
@@ -31,33 +35,38 @@
                 </thead>
                 <tbody>
                 <td>
+                    <form id="answ-form" action="${userAnswerSaveURL}" method="POST">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    <c:forEach var="answer" items="${question.answers}">
                     <div class="checkbox">
-                        <label><input type="checkbox" value="">Answer 1</label>
+                        <label><input name="answers" type="checkbox" value="${answer.id}">${answer.text}</label>
                     </div>
-
-
-
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Answer 2</label>
-                    </div>
-
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Answer 3</label>
-                    </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Answer 4</label>
-                    </div>
+                    </c:forEach>
+                    </form>
                 </td>
                 </tbody>
             </table>
         </div>
 
         <div id="buttons" align="center">
-            <button type="button" class="btn btn-default">Preview</button>
-            <button type="button" class="btn btn-default">Next</button>
+            <a id="prev-question"  class="btn btn-default">Preview</a>
+            <a id="next-question" class="btn btn-default">Next</a>
         </div>
         <div id="footer"></div>
 
     </div>
+   </div>
+<script type="text/javascript">
+
+    // A $( document ).ready() block.
+    //dodawanie eventu do guzika
+    $( document ).ready(function() {
+       // console.log( "ready!" );
+        $('#next-question').on('click', function(){
+            $('#answ-form').submit();
+        });
+    });
+
+</script>
 </body>
 </html>
