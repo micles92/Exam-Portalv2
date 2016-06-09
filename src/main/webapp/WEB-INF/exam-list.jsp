@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <c:url value="/exam/take" var="takeExamURL"/>
 <c:url value="/logout" var="logoutURL"/>
+<c:url value="/login?logoutSucess" var = "logoutSuccessURL"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +39,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li role="presentation"><a href="#">My Account</a></li>
-                    <li role="presentation"><a href="${logoutURL}" >Logout</a></li>
+                    <li role="presentation"><a id="logout-link" href="${logoutURL}" >Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -69,15 +70,39 @@
 
     <div id="footer"></div>
 
+    <form id="logout-form" method="POST" action="${logoutURL}">
+        <input type="hidden"
+               name="${_csrf.parameterName}"
+               value="${_csrf.token}"/>
+    </form>
+
 
 
 </div>
 
+<script type="text/javascript">
 
+    $( document).ready(function(){
+        $('#logout-link').on('click', function(e){
+            e.preventDefault();
+            $('#logout-form').submit();
+            <%--$.post("${logoutURL}", {"${_csrf.parameterName}":"${_csrf.token}"} );--%>
 
+            <%--$.ajax({--%>
+                <%--type: 'POST',--%>
+                <%--url: "${logoutURL}",--%>
+                <%--data: {--%>
+                    <%--"${_csrf.parameterName}":"${_csrf.token}"--%>
+                <%--},--%>
+                <%--async:true--%>
+            <%--});--%>
 
+            <%--window.location.replace("${logoutSuccessURL}");--%>
 
+        });
+    });
 
+</script>
 
 </body>
 </html>

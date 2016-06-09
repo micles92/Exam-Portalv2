@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").defaultSuccessUrl("/").loginProcessingUrl("/login").permitAll().and()
-                .logout().logoutUrl("/logout").logoutSuccessUrl("/login?logoutSuccess");
+                .logout().permitAll().logoutUrl("/logout").logoutSuccessUrl("/login?logoutSuccess");
     }
 
     @Override
