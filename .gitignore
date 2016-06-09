@@ -1,4 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
+.idea/workspace.xml
 out
 ExamPortal.iml
+src/test/
+target/ExamPortal-1.0-SNAPSHOT/META-INF/
+target/generated-sources/
+target/surefire/

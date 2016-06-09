@@ -38,7 +38,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li role="presentation"><a href="#">My Account</a></li>
-                    <li role="presentation"><a href="<c:url value="/logout"/> ">Logout</a></li>
+                    <li role="presentation"><a href="${logoutURL}" >Logout</a></li>
                 </ul>
             </li>
         </ul>
