@@ -10,4 +10,6 @@ import java.util.List;
 public interface ExamService {
 
     List<Exam> findAll();
+
+    Exam findById(long id);
 }

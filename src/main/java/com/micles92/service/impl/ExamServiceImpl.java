@@ -19,4 +19,8 @@ public class ExamServiceImpl implements ExamService{
     public List<Exam> findAll() {
         return examDao.findAll();
     }
+
+    public Exam findById(long id){
+        return examDao.findOne(id);
+    }
 }

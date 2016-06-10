@@ -9,4 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Created by lesiulol on 18.05.16.
  */
 public interface ExamDao extends JpaRepository<Exam, Long> {
+
 }
