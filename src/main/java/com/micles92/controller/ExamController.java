@@ -3,8 +3,10 @@ package com.micles92.controller;
 import com.micles92.model.Exam;
 import com.micles92.model.Question;
 import com.micles92.model.Result;
+import com.micles92.model.User;
 import com.micles92.service.ExamService;
 import com.micles92.service.QuestionService;
+import com.micles92.service.ResultService;
 import com.micles92.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -30,6 +33,9 @@ public class ExamController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private ResultService resultService;
+
 
     @RequestMapping("/list")
     public String listExams(Model model){
@@ -41,15 +47,14 @@ public class ExamController {
     @RequestMapping(value = "/take/{examId}", method = RequestMethod.GET)
     public String takeExam(Model model, @PathVariable("examId") Long examId){
      List<Question>questions;
-     Result result;
-        result = new Result();
-
-        result.setExam(examService.findById(examId));
-        result.setUser(userService.getLoggedUser());
-
+        Exam exam = examService.findById(examId);
+        User user = userService.getLoggedUser();
         questions = questionService.findByExamId(examId);
+        model.addAttribute("examId", examId);
 
-        return "redirect:/question/" + questions.get(0).getId();
+       Result result = resultService.createNewResult(questions, exam, user);
+
+        return "redirect:/question/" +  resultService.getFirstQuestion(result.getSequence()).getId();
 
     }
 

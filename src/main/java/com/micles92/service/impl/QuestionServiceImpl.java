@@ -23,4 +23,6 @@ public class QuestionServiceImpl implements QuestionService {
     public List<Question> findByExamId(Long examId) {
         return questionDao.findByExamId(examId);
     }
+
+
 }

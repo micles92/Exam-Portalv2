@@ -37,6 +37,8 @@
                 <td>
                     <form id="answ-form" action="${userAnswerSaveURL}" method="POST">
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        <input type="hidden" name="questionId" value="${question.id}">
+                        <input type="hidden" name="examId" value="${examId}">
                     <c:forEach var="answer" items="${question.answers}">
                     <div class="checkbox">
                         <label><input name="answers" type="checkbox" value="${answer.id}">${answer.text}</label>
